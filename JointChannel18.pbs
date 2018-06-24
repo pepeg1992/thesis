@@ -1,0 +1,11 @@
+export PATH=$PATH:/usr/local/cuda-8.0/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64
+export LD_LIBRARY_PATH=/home/a3lab/shared/CUDNN/cudnn-8.0-linux-x64-v7/lib64:$L$
+export CPATH=/home/a3lab/shared/CUDNN/cudnn-8.0-linux-x64-v7/nclude:$CPATH
+export LIBRARY_PATH=/home/a3lab/shared/CUDNN/cudnn-8.0-linux-x64-v7/lib64:$LIBR$
+source /home/gpepe/my_project_folder/my_project/bin/activate
+cd /home/gpepe/codice/thesis
+THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32,optimizer_including=cudnn
+export KERAS_BACKEND=theano python -c 'from keras import backend'
+Using Theano backend.
+python JointChannel18.py
